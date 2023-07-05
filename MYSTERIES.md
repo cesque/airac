@@ -1,0 +1,7 @@
+- VHF Navaid Facility has blank value not listed in specification
+- VHF Navaid Facility has duplicate values for I
+- Enroute NDB Navaid Marker has blank value not listed in specification
+- Enroute NDB Navaid Collocation has blank value not listed in specification
+- Enroute Waypoint Usage is sometimes null (assuming this is equivalent to "  ")
+- Communication Service Indicator is sometimes null -- is this okay?
+- Waypoint Description Code has 4 logical categories -- what are their purposes/names?
