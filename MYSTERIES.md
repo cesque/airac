@@ -5,3 +5,4 @@
 - Enroute Waypoint Usage is sometimes null (assuming this is equivalent to "  ")
 - Communication Service Indicator is sometimes null -- is this okay?
 - Waypoint Description Code has 4 logical categories -- what are their purposes/names?
+- Airspace Type has 2 keys with the same name: Control Area, ICAO Designation

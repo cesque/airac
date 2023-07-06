@@ -21,6 +21,15 @@ import Iap from './TerminalProcedure/Iap.js'
 import AirportCommunication from './Communication/AirportCommunication.js'
 import EnrouteCommunication from './Communication/EnrouteCommunication.js'
 import Communication from './Communication/Communication.js'
+import GridMora from './GridMora.js'
+import AirportMsa from './AirportMSA.js'
+import EnrouteAirwayRestriction from './EnrouteAirwayRestriction.js'
+import ControlledAirspace from './ControlledAirspace.js'
+import CruisingTable from './CruisingTable.js'
+import FirUir from './FirUir.js'
+import RestrictiveAirspace from './RestrictiveAirspace.js'
+import Gate from './Gate.js'
+import Gls from './Gls.js'
 
 async function fetchAll(db: Database, table: string) {
     return await db.all(`select * from tbl_${ table }`)
@@ -51,6 +60,15 @@ export default class AIRAC {
         'iaps',
         'airport_communication',
         'enroute_communication',
+        'grid_mora',
+        'airport_msa',
+        'enroute_airway_restriction',
+        'controlled_airspace',
+        'cruising_tables',
+        'fir_uir',
+        'restrictive_airspace',
+        'gate',
+        'gls',
     ]
 
     header: Header
@@ -70,6 +88,15 @@ export default class AIRAC {
     Iaps: Iap[]
     AirportCommunications: AirportCommunication[]
     EnrouteCommunications: EnrouteCommunication[]
+    GridMoras: GridMora[]
+    AirportMsas: AirportMsa[]
+    EnrouteAirwayRestrictions: EnrouteAirwayRestriction[]
+    ControlledAirspaces: ControlledAirspace[]
+    CruisingTables: CruisingTable[]
+    FirUirs: FirUir[]
+    RestrictiveAirspaces: RestrictiveAirspace[]
+    Gates: Gate[]
+    Glss: Gls[]
 
     get NDBNavaids(): NdbNavaid[] {
         let list: NdbNavaid[] = []
@@ -123,6 +150,16 @@ export default class AIRAC {
         this.Iaps = getMappedItems(json.iaps, Iap)
         this.AirportCommunications = getMappedItems(json.airport_communication, AirportCommunication)
         this.EnrouteCommunications = getMappedItems(json.enroute_communication, EnrouteCommunication)
+        this.GridMoras = getMappedItems(json.grid_mora, GridMora)
+        this.AirportMsas = getMappedItems(json.airport_msa, AirportMsa)
+        this.EnrouteAirwayRestrictions = getMappedItems(json.enroute_airway_restriction, EnrouteAirwayRestriction)
+        this.ControlledAirspaces = getMappedItems(json.controlled_airspace, ControlledAirspace)
+        this.CruisingTables = getMappedItems(json.cruising_tables, CruisingTable)
+        this.FirUirs = getMappedItems(json.fir_uir, FirUir)
+        this.RestrictiveAirspaces = getMappedItems(json.restrictive_airspace, RestrictiveAirspace)
+        this.Gates = getMappedItems(json.gate, Gate);
+        this.Glss = getMappedItems(json.gls, Gls);
+
     }
 
     static async fromDb(file: string) {

@@ -1,16 +1,21 @@
 /* --- helper function to convert Navigraph DDL to a typescript class --- */
 
 let input = `
-    [area_code] TEXT(3),
-    [icao_code] TEXT(2),
-    [airport_identifier] TEXT(4),
-    [communication_type] TEXT(3),
-    [communication_frequency] REAL(5),
-    [frequency_units] TEXT(1),
-    [service_indicator] TEXT(3),
-    [callsign] TEXT(25),
-    [latitude] REAL(9),
-    [longitude] REAL(10)
+[area_code] TEXT(3),
+[airport_identifier] TEXT(4),
+[icao_code] TEXT(2),
+[gls_ref_path_identifier] TEXT(4),
+[gls_category] TEXT(1),
+[gls_channel] INT(5),
+[runway_identifier] TEXT(5),
+[gls_approach_bearing] REAL(5),
+[station_latitude] REAL(9),
+[station_longitude] REAL(10),
+[gls_station_ident] TEXT(4),
+[gls_approach_slope] REAL(4),
+[magnetic_variation] REAL(6),
+[station_elevation] INT(5),
+[station_type] TEXT(3)
 `
 
 let lines = input
